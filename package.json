@@ -1,0 +1,11 @@
+{
+    "name": "rd-training-client",
+    "version": "1.0.0",
+    "author": "Jordan Kennedy <jordan.kennedy@simpleviewinc.com>",
+    "description": "Client for communicating with rd-training",
+    "main": "src/index.js",
+	"dependencies": {
+		"@simpleview/sv-graphql-client": "3.0.14"
+	},
+    "license": "MIT"
+}
