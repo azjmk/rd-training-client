@@ -1,5 +1,5 @@
-const MoviesPrefix = require('./prefixes/collections/MoviesPrefix');
-const PeoplePrefix = require('./prefixes/collections/PeoplePrefix');
+const MoviesPrefix = require("./collections/MoviesPrefix");
+const PeoplePrefix = require("./collections/PeoplePrefix")
 
 class YourPrefix {
     constructor({ graphUrl, graphServer }) {
