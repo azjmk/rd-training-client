@@ -1,20 +1,20 @@
 const MoviesPrefix = require("./collections/MoviesPrefix");
 const PeoplePrefix = require("./collections/PeoplePrefix")
 
-class YourPrefix {
+class TrainingPrefix {
     constructor({ graphUrl, graphServer }) {
         this.name = "training";
         this._graphUrl = graphUrl;
         this._graphServer = graphServer;
 
         this._movies = new MoviesPrefix({
-            graphUrl: graphUrl,
-            graphServer: graphServer
+            graphUrl,
+            graphServer
         });
 
         this._people = new PeoplePrefix({
-            graphUrl: graphUrl,
-            graphServer: graphServer
+            graphUrl,
+            graphServer
         });
     }
 
@@ -43,4 +43,4 @@ class YourPrefix {
     }
 }
 
-module.exports = YourPrefix;
+module.exports = TrainingPrefix;
