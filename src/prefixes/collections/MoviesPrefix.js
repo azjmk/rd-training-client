@@ -1,4 +1,4 @@
-const { query } = require("@simpleview/sv-graphql-client");
+const query = require("@simpleview/sv-graphql-client/lib/query");
 
 class MoviesPrefix {
     constructor({ graphUrl, graphServer }) {
