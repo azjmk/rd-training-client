@@ -1,5 +1,10 @@
 const { query } = require("@simpleview/sv-graphql-client");
 
+const defaultFields = `
+    success
+    message
+`;
+
 class PeoplePrefix {
     constructor({ graphUrl, graphServer }) {
         this.name = "people";
@@ -7,7 +12,7 @@ class PeoplePrefix {
         this._graphServer = graphServer;
     }
 
-    async find({ fields, context, filter, headers }) {
+    async find({ fields = defaultFields, context, filter, headers }) {
         const response = await query({
             query: `
                 query ($filter: training_people_find_input) {
@@ -28,7 +33,7 @@ class PeoplePrefix {
         return response;
     }
 
-    async insert({ fields, context, input, headers }) {
+    async insert({ fields = defaultFields, context, input, headers }) {
         const response = await query({
             query: `
                 mutation ($input: [training_people_insert_input!]!) {
@@ -49,7 +54,7 @@ class PeoplePrefix {
         return response;
     }
 
-    async remove({ fields, context, filter, headers }) {
+    async remove({ fields = defaultFields, context, filter, headers }) {
         const response = await query({
             query: `
                 mutation ($filter: training_people_remove_input) {
