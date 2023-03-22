@@ -8,6 +8,10 @@ class PeoplePrefix {
 	}
 
 	async find({ fields, context, filter, headers }) {
+		const variables = {
+			filter
+		}
+
 		const response = await query({
 			query: `
 				query ($filter: training_people_find_input) {
@@ -18,7 +22,7 @@ class PeoplePrefix {
 					}
 				}
 			`,
-			variables: { filter },
+			variables,
 			url: this._graphUrl,
 			headers,
 			key: "training.training_people_find",
@@ -29,6 +33,10 @@ class PeoplePrefix {
 	}
 
 	async insert({ fields, context, input, headers }) {
+		const variables = {
+			input
+		}
+
 		const response = await query({
 			query: `
 				mutation ($input: [training_people_insert_input!]!) {
@@ -39,7 +47,7 @@ class PeoplePrefix {
 					}
 				}
 			`,
-			variables: { input },
+			variables,
 			url: this._graphUrl,
 			headers,
 			key: "training.training_people_insert",
@@ -50,6 +58,10 @@ class PeoplePrefix {
 	}
 
 	async remove({ fields, context, filter, headers }) {
+		const variables = {
+			filter
+		}
+
 		const response = await query({
 			query: `
 				mutation ($filter: training_people_remove_input) {
@@ -60,7 +72,7 @@ class PeoplePrefix {
 					}
 				}
 			`,
-			variables: { filter },
+			variables,
 			url: this._graphUrl,
 			headers,
 			key: "training.training_people_remove",

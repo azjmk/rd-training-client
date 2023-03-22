@@ -8,6 +8,10 @@ class MoviesPrefix {
 	}
 
 	async find({ fields, context, filter, headers }) {
+		const variables = {
+			filter
+		}
+
 		const response = await query({
 			query: `
 				query ($filter: training_movies_find_input) {
@@ -18,7 +22,7 @@ class MoviesPrefix {
 					}
 				}
 			`,
-			variables: { filter },
+			variables,
 			url: this._graphUrl,
 			headers,
 			key: "training.training_movies_find",
@@ -29,6 +33,10 @@ class MoviesPrefix {
 	}
 
 	async insert({ fields, context, input, headers }) {
+		const variables = {
+			input
+		}
+
 		const response = await query({
 			query: `
 				mutation ($input: [training_movies_insert_input!]!) {
@@ -39,7 +47,7 @@ class MoviesPrefix {
 					}
 				}
 			`,
-			variables: { input },
+			variables,
 			url: this._graphUrl,
 			headers,
 			key: "training.training_movies_insert",
@@ -50,6 +58,10 @@ class MoviesPrefix {
 	}
 
 	async remove({ fields, context, filter, headers }) {
+		const variables = {
+			filter
+		}
+
 		const response = await query({
 			query: `
 				mutation ($filter: training_movies_remove_input) {
@@ -60,7 +72,7 @@ class MoviesPrefix {
 					}
 				}
 			`,
-			variables: { filter },
+			variables,
 			url: this._graphUrl,
 			headers,
 			key: "training.training_movies_remove",
