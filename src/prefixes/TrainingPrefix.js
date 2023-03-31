@@ -1,10 +1,10 @@
-const { query } = require("@simpleview/sv-graphql-client");
-const MoviesPrefix = require("./collections/MoviesPrefix");
-const PeoplePrefix = require("./collections/PeoplePrefix");
+const { query } = require('@simpleview/sv-graphql-client');
+const MoviesPrefix = require('./collections/MoviesPrefix');
+const PeoplePrefix = require('./collections/PeoplePrefix');
 
 class TrainingPrefix {
 	constructor({ graphUrl, graphServer }) {
-		this.name = "training";
+		this.name = 'training';
 		this._graphUrl = graphUrl;
 		this._graphServer = graphServer;
 
@@ -32,7 +32,7 @@ class TrainingPrefix {
 			`,
 			url: this._graphUrl,
 			headers,
-			key: "training.training_test_clear_data",
+			key: 'training.training_test_clear_data',
 			clean: true
 		});
 
@@ -52,7 +52,7 @@ class TrainingPrefix {
 			`,
 			url: this._graphUrl,
 			headers,
-			key: "training.training_test_reset_data",
+			key: 'training.training_test_reset_data',
 			clean: true
 		});
 

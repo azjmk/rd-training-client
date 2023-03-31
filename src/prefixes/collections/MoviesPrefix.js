@@ -1,8 +1,8 @@
-const { query } = require("@simpleview/sv-graphql-client");
+const { query } = require('@simpleview/sv-graphql-client');
 
 class MoviesPrefix {
 	constructor({ graphUrl, graphServer }) {
-		this.name = "movies";
+		this.name = 'movies';
 		this._graphUrl = graphUrl;
 		this._graphServer = graphServer;
 	}
@@ -25,7 +25,7 @@ class MoviesPrefix {
 			variables,
 			url: this._graphUrl,
 			headers,
-			key: "training.training_movies_find",
+			key: 'training.training_movies_find',
 			clean: true
 		});
 
@@ -50,7 +50,7 @@ class MoviesPrefix {
 			variables,
 			url: this._graphUrl,
 			headers,
-			key: "training.training_movies_insert",
+			key: 'training.training_movies_insert',
 			clean: true
 		});
 
@@ -75,7 +75,7 @@ class MoviesPrefix {
 			variables,
 			url: this._graphUrl,
 			headers,
-			key: "training.training_movies_remove",
+			key: 'training.training_movies_remove',
 			clean: true
 		});
 
