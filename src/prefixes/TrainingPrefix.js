@@ -1,6 +1,6 @@
 const { query } = require('@simpleview/sv-graphql-client');
-const MoviesPrefix = require('./collections/MoviesPrefix');
-const PeoplePrefix = require('./collections/PeoplePrefix');
+const Movies = require('./collections/Movies');
+const People = require('./collections/People');
 
 class TrainingPrefix {
 	constructor({ graphUrl, graphServer }) {
@@ -8,12 +8,12 @@ class TrainingPrefix {
 		this._graphUrl = graphUrl;
 		this._graphServer = graphServer;
 
-		this.movies = new MoviesPrefix({
+		this.movies = new Movies({
 			graphUrl,
 			graphServer
 		});
 
-		this.people = new PeoplePrefix({
+		this.people = new People({
 			graphUrl,
 			graphServer
 		});
