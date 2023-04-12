@@ -16,7 +16,7 @@ class Movies {
 			query: `
 				query ($filter: training_movies_find_input) {
 					training {
-						training_movies_find(filter: $filter) {
+						movies_find(filter: $filter) {
 							${fields}
 						}
 					}
@@ -25,7 +25,7 @@ class Movies {
 			variables,
 			url: this._graphUrl,
 			headers,
-			key: 'training.training_movies_find',
+			key: 'training.movies_find',
 			clean: true
 		});
 
@@ -41,7 +41,7 @@ class Movies {
 			query: `
 				mutation ($input: [training_movies_insert_input!]!) {
 					training {
-						training_movies_insert(input: $input) {
+						movies_insert(input: $input) {
 							${fields}
 						}
 					}
@@ -50,7 +50,7 @@ class Movies {
 			variables,
 			url: this._graphUrl,
 			headers,
-			key: 'training.training_movies_insert',
+			key: 'training.movies_insert',
 			clean: true
 		});
 
@@ -66,7 +66,7 @@ class Movies {
 			query: `
 				mutation ($filter: training_movies_remove_input) {
 					training {
-						training_movies_remove(filter: $filter) {
+						movies_remove(filter: $filter) {
 							${fields}
 						}
 					}
@@ -75,7 +75,7 @@ class Movies {
 			variables,
 			url: this._graphUrl,
 			headers,
-			key: 'training.training_movies_remove',
+			key: 'training.movies_remove',
 			clean: true
 		});
 

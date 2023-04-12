@@ -24,7 +24,7 @@ class TrainingPrefix {
 			query: `
 				mutation {
 					training {
-						training_test_clear_data {
+						test_clear_data {
 							${fields}
 						}
 					}
@@ -32,7 +32,7 @@ class TrainingPrefix {
 			`,
 			url: this._graphUrl,
 			headers,
-			key: 'training.training_test_clear_data',
+			key: 'training.test_clear_data',
 			clean: true
 		});
 
@@ -44,7 +44,7 @@ class TrainingPrefix {
 			query: `
 				mutation {
 					training {
-						training_test_reset_data {
+						test_reset_data {
 							${fields}
 						}
 					}
@@ -52,7 +52,7 @@ class TrainingPrefix {
 			`,
 			url: this._graphUrl,
 			headers,
-			key: 'training.training_test_reset_data',
+			key: 'training.test_reset_data',
 			clean: true
 		});
 

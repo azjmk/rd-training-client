@@ -16,7 +16,7 @@ class People {
 			query: `
 				query ($filter: training_people_find_input) {
 					training {
-						training_people_find(filter: $filter) {
+						people_find(filter: $filter) {
 							${fields}
 						}
 					}
@@ -25,7 +25,7 @@ class People {
 			variables,
 			url: this._graphUrl,
 			headers,
-			key: 'training.training_people_find',
+			key: 'training.people_find',
 			clean: true
 		});
 
@@ -41,7 +41,7 @@ class People {
 			query: `
 				mutation ($input: [training_people_insert_input!]!) {
 					training {
-						training_people_insert(input: $input) {
+						people_insert(input: $input) {
 							${fields}
 						}
 					}
@@ -50,7 +50,7 @@ class People {
 			variables,
 			url: this._graphUrl,
 			headers,
-			key: 'training.training_people_insert',
+			key: 'training.people_insert',
 			clean: true
 		});
 
@@ -66,7 +66,7 @@ class People {
 			query: `
 				mutation ($filter: training_people_remove_input) {
 					training {
-						training_people_remove(filter: $filter) {
+						people_remove(filter: $filter) {
 							${fields}
 						}
 					}
@@ -75,7 +75,7 @@ class People {
 			variables,
 			url: this._graphUrl,
 			headers,
-			key: 'training.training_people_remove',
+			key: 'training.people_remove',
 			clean: true
 		});
 
