@@ -19,12 +19,12 @@ class TrainingPrefix {
 		});
 	}
 
-	async clearTestData({ fields = `success message`, context, filter, headers } = {}) {
+	async test_data_clear({ fields = `success message`, context, filter, headers } = {}) {
 		const response = await query({
 			query: `
 				mutation {
 					training {
-						test_clear_data {
+						test_data_clear {
 							${fields}
 						}
 					}
@@ -32,19 +32,19 @@ class TrainingPrefix {
 			`,
 			url: this._graphUrl,
 			headers,
-			key: 'training.test_clear_data',
+			key: 'training.test_data_clear',
 			clean: true
 		});
 
 		return response;
 	}
 
-	async resetTestData({ fields = `success message`, context, input, headers } = {}) {
+	async test_data_reset({ fields = `success message`, context, input, headers } = {}) {
 		const response = await query({
 			query: `
 				mutation {
 					training {
-						test_reset_data {
+						test_data_reset {
 							${fields}
 						}
 					}
@@ -52,7 +52,7 @@ class TrainingPrefix {
 			`,
 			url: this._graphUrl,
 			headers,
-			key: 'training.test_reset_data',
+			key: 'training.test_data_reset',
 			clean: true
 		});
 
